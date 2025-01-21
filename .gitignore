@@ -1,0 +1,12 @@
+# Ignore directories
+include/
+Lib/
+share/
+
+# Also ignore common Python virtual environment directories (optional)
+my_env/
+
+
+# System files
+.DS_Store
+Thumbs.db
