@@ -1,0 +1,35 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250121213423
+Username: DESKTOP-DJPQ823\User
+RunAs User: DESKTOP-DJPQ823\User
+Configuration Name: 
+Machine: DESKTOP-DJPQ823 (Microsoft Windows NT 10.0.22000.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\User\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 14164
+PSVersion: 5.1.22000.2538
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22000.2538
+BuildVersion: 10.0.22000.2538
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is output3.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cUser\x5cDesktop\x5cYan\x5cUniversity\x5cYolov11\x5cYolo_codePS C:\Users\User\Desktop\Yan\University\Yolov11\Yolo_code> ]633;B
+(my_env) python -m cProfile yolo.py
+        1    0.000    0.000    0.000    0.000 exceptions.py:15(NonSquareMatrixError)
+        1    0.000    0.000    0.000    0.000 exceptions.py:24(NonPositiveDefiniteMatrixError)
+        1    0.000    0.000    0.000    0.000 hyperexpand.py:1118(MeijerShiftA)
+        1    0.000    0.000    0.000    0.000 hyperexpand.py:1247(MeijerUnShiftC)
+        1    0.000    0.000    0.000    0.000 {built-in method numpy._core._multiarray_umath._set_madvise_hugepage}
+        1    0.000    0.000    0.000    0.000 {function HTTPResponse.flush at 0x0000024DEAC7D3A0}
+        1    0.000    0.000    0.000    0.000 {method 'keys' of 'collections.OrderedDict' objects}
+        1    0.000    0.000    0.000    0.000 client.py:1488(InvalidURL)
+        1    0.000    0.000    0.000    0.000 six.py:239(exec_module)
+        1    0.000    0.000    0.000    0.000 gaussiandomains.py:627(__init__)
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cUser\x5cDesktop\x5cYan\x5cUniversity\x5cYolov11\x5cYolo_codePS C:\Users\User\Desktop\Yan\University\Yolov11\Yolo_code> ]633;B
+(my_env) python -m cProfile yolo.py
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cUser\x5cDesktop\x5cYan\x5cUniversity\x5cYolov11\x5cYolo_codePS C:\Users\User\Desktop\Yan\University\Yolov11\Yolo_code> ]633;B

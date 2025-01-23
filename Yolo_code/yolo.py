@@ -1,35 +1,47 @@
-
-
 from ultralytics import YOLO
 
 if __name__ == "__main__":
     
-    model = YOLO("yolo11n.pt", task="detect")  # Load model and make predictions
+    model = YOLO("C:/Users/User/Desktop/Yan/University/Yolov11/ultralytics/ultralytics/cfg/models/11/test1.yaml", task="detect").load('C:/Users/User/Desktop/Yan/University/Yolov11/Yolo_code/yolo11n.pt')  # Load model and make predictions
     # Train the model
     results = model.train(
-        data = "C:/Users/User/Downloads/Uno/data.yaml",  # path to your data configuration file
-        epochs=1,                      # number of epochs
+        data = "C:/Users/User/Desktop/Yan/University/Annotated_dataset/data.yaml",  # path to your data configuration file
+        epochs=330,                      # number of epochs
         imgsz=640,                      # image size
         batch=16,                       # batch size
         device='0',                      # cuda device (use '0' for GPU, 'cpu' for CPU)
-        visualize=True,                 # plot results
+        #save=True,
+        patience=50
+
     )
 
-# out_file = model.export(
-#     format="torchscript",
-#     imgsz=640,         # (int | list) input images size for exported model
-#     batch=1,           # (int) batch size for exported model
-#     keras=False,       # (bool) use Keras
-#     optimize=False,    # (bool) TorchScript: optimize for mobile
-#     half=False,        # (bool) ONNX/TF/TensorRT: FP16 quantization
-#     int8=False,        # (bool) CoreML/TF/TensorRT/OpenVino INT8 quantization
-#     dynamic=False,     # (bool) ONNX/TF/TensorRT: dynamic axes
-#     simplify=False,    # (bool) ONNX: simplify model using `onnxslim`
-#     opset=None,        # (int, optional) ONNX: opset version
-#     workspace=4,       # (int) TensorRT: workspace size (GiB)
-#     nms=False,         # (bool) CoreML: add NMS
-# )
-# # reference https://docs.ultralytics.com/modes/export
-# from ultralytics import YOLO
-# import os
-# print(os.path.exists('C:/Users/User/Downloads/images/valid/images'))
+    # #Validating the model
+    # model=YOLO("C:/Users/User/Desktop/Yan/University/Yolov11/ultralytics/runs/detect/train45/weights/best.pt")
+
+    # metrics = model.val()  # assumes `model` has been loaded
+    # print(metrics.box.map)  # mAP50-95
+    # print(metrics.box.map50)  # mAP50
+    # print(metrics.box.map75)  # mAP75
+    # print(metrics.box.maps)  # list of mAP50-95 for each category
+
+    # #Predicting the model
+    # model=YOLO("C:/Users/User/Desktop/Yan/University/Yolov11/ultralytics/runs/detect/train45/weights/best.pt")
+    # # Predict on all images in the test folder
+    # results = model.predict(
+    #     source="C:/Users/User/Desktop/Yan/University/Annotated_dataset/test/images",  # Replace with your test folder path
+    #     save=True,  # Save results
+    #     conf=0.25,  # Confidence threshold
+    #     save_txt=True,  # Save results in txt format
+    #     save_conf=True,  # Save confidence scores
+    #     visualize=False
+    # )
+
+    # Process results if you need to work with the detections programmatically
+    # for result in results:
+    #     boxes = result.boxes  # Get bounding boxes
+    #     for box in boxes:
+    #         print(f"Detection: {box.cls}")  # Class ID
+    #         print(f"Confidence: {box.conf}")  # Confidence score
+    #         print(f"Coordinates: {box.xyxy}")  # Box coordinates
+
+

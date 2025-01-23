@@ -458,6 +458,7 @@ class C2fAttn(nn.Module):
 
     def forward(self, x, guide):
         """Forward pass through C2f layer."""
+        
         y = list(self.cv1(x).chunk(2, 1))
         y.extend(m(y[-1]) for m in self.m)
         y.append(self.attn(y[-1], guide))

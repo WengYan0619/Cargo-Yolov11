@@ -1,0 +1,69 @@
+﻿**********************
+Windows PowerShell transcript start
+Start time: 20250121185422
+Username: DESKTOP-DJPQ823\User
+RunAs User: DESKTOP-DJPQ823\User
+Configuration Name: 
+Machine: DESKTOP-DJPQ823 (Microsoft Windows NT 10.0.22000.0)
+Host Application: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noexit -command try { . "c:\Users\User\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\workbench\contrib\terminal\common\scripts\shellIntegration.ps1" } catch {}
+Process ID: 16108
+PSVersion: 5.1.22000.2538
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.22000.2538
+BuildVersion: 10.0.22000.2538
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+Transcript started, output file is output.log
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cUser\x5cDesktop\x5cYan\x5cUniversity\x5cYolov11\x5cYolo_codePS C:\Users\User\Desktop\Yan\University\Yolov11\Yolo_code> ]633;B
+(my_env) python -m cProfile yolo.py
+        1    0.000    0.000    0.000    0.000 exceptions.py:10(ShapeError)
+        1    0.000    0.000    0.000    0.000 exceptions.py:15(NonSquareMatrixError)
+        1    0.000    0.000    0.000    0.000 exceptions.py:24(NonPositiveDefiniteMatrixError)
+        1    0.000    0.000    0.000    0.000 hyperexpand.py:1118(MeijerShiftA)
+        1    0.000    0.000    0.000    0.000 solveset.py:794(_SolveTrig1Error)
+        1    0.000    0.000    0.000    0.000 diophantine.py:1107(CubicThue)
+        1    0.000    0.000    0.000    0.000 simplex.py:96(InfeasibleLPError)
+        1    0.000    0.000    0.000    0.000 {function HTTPResponse.flush at 0x0000023DD3F1D440}
+        1    0.000    0.000    0.000    0.000 {built-in method numpy._core._multiarray_umath._set_madvise_hugepage}
+        2    0.000    0.000    0.000    0.000 arrayprint.py:472(<lambda>)
+        1    0.000    0.000    0.000    0.000 _nbit_base.py:97(_8Bit)
+        1    0.000    0.000    0.000    0.000 idna.py:293(StreamReader)
+        1    0.000    0.000    0.000    0.000 base.py:65(on_train_end)
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cUser\x5cDesktop\x5cYan\x5cUniversity\x5cYolov11\x5cYolo_codePS C:\Users\User\Desktop\Yan\University\Yolov11\Yolo_code> ]633;B
+(my_env) python -m cProfile yolo.py | tee output.log
+>> TerminatingError(out-file): "The process cannot access the file 'C:\Users\User\Desktop\Yan\University\Yolov11\Yolo_code\output.log' because it is being used by another process."
+out-file : The process cannot access the file 'C:\Users\User\Desktop\Yan\University\Yolov11\Yolo_code\output.log' 
+because it is being used by another process.
+At line:1 char:1
++ python -m cProfile yolo.py | tee output.log
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [out-file], IOException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+out-file : The process cannot access the file 'C:\Users\User\Desktop\Yan\University\Yolov11\Yolo_code\output.log' because it is being used by another process.
+At line:1 char:1
++ python -m cProfile yolo.py | tee output.log
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [out-file], IOException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cUser\x5cDesktop\x5cYan\x5cUniversity\x5cYolov11\x5cYolo_codePS C:\Users\User\Desktop\Yan\University\Yolov11\Yolo_code> ]633;B
+(my_env) python -m cProfile yolo.py | Tee-Object -FilePath output.log
+>> TerminatingError(out-file): "The process cannot access the file 'C:\Users\User\Desktop\Yan\University\Yolov11\Yolo_code\output.log' because it is being used by another process."
+out-file : The process cannot access the file 'C:\Users\User\Desktop\Yan\University\Yolov11\Yolo_code\output.log' 
+because it is being used by another process.
+At line:1 char:1
++ python -m cProfile yolo.py | Tee-Object -FilePath output.log
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [out-file], IOException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+out-file : The process cannot access the file 'C:\Users\User\Desktop\Yan\University\Yolov11\Yolo_code\output.log' because it is being used by another process.
+At line:1 char:1
++ python -m cProfile yolo.py | Tee-Object -FilePath output.log
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OpenError: (:) [out-file], IOException
+    + FullyQualifiedErrorId : FileOpenFailure,Microsoft.PowerShell.Commands.OutFileCommand
+
+]633;D;0]633;A]633;P;Cwd=C:\x5cUsers\x5cUser\x5cDesktop\x5cYan\x5cUniversity\x5cYolov11\x5cYolo_codePS C:\Users\User\Desktop\Yan\University\Yolov11\Yolo_code> ]633;B
