@@ -222,7 +222,7 @@ class C2(nn.Module):
         return self.cv2(torch.cat((self.m(a), b), 1))
 
 
-class C2f(nn.Module):
+class  C2f(nn.Module):
     """Faster Implementation of CSP Bottleneck with 2 convolutions."""
 
     def __init__(self, c1, c2, n=1, shortcut=False, g=1, e=0.5):
@@ -438,11 +438,17 @@ class MaxSigmoidAttnBlock(nn.Module):
         aw = aw + self.bias[None, :, None, None]
         aw = aw.sigmoid() * self.scale
 
-        x = self.proj_conv(x)
-        x = x.view(bs, self.nh, -1, h, w)
-        x = x * aw.unsqueeze(2)
-        return x.view(bs, -1, h, w)
+        # x = self.proj_conv(x)
+        # x = x.view(bs, self.nh, -1, h, w)
+        # x = x * aw.unsqueeze(2)
+        # return x.view(bs, -1, h, w)
 
+        # Check the output size from MaxSigmoidAttnBlock
+        x = self.proj_conv(x)
+        out_channels = self.proj_conv.out_channels  # Ensure this matches the expected input channels in subsequent layers
+        x = x.view(bs, self.nh, out_channels // self.nh, h, w)  # Modified to include out_channels dynamically
+        x = x * aw.unsqueeze(2)
+        return x.view(bs, -1, h, w),guide
 
 class C2fAttn(nn.Module):
     """C2f module with an additional attn module."""
@@ -1041,6 +1047,9 @@ class C2PSA(nn.Module):
         """Processes the input tensor 'x' through a series of PSA blocks and returns the transformed tensor."""
         a, b = self.cv1(x).split((self.c, self.c), dim=1)
         b = self.m(b)
+        for layer in self.layers:
+            x = layer(x)
+            print(f"Layer {layer.name}: {x.shape}")
         return self.cv2(torch.cat((a, b), 1))
 
 
